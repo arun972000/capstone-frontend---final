@@ -42,7 +42,7 @@ const AllBlogs = () => {
                         <input
                             type="text"
                             className="form-control"
-                            placeholder="Search..."
+                            placeholder="Search by entering title"
                             aria-label="Search"
                             aria-describedby="search-button"
                             value={searchData}
