@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import loginReducer from "./Login";
+import ThemeReducer from "./theme";
 
 
 const storeToLocalStorage = ({ getState }) => {
@@ -13,7 +14,8 @@ const storeToLocalStorage = ({ getState }) => {
 
 const store = configureStore({
   reducer: {
-    loginReducer
+    loginReducer,
+    ThemeReducer
   },
   devTools: true,
   preloadedState: (function () {

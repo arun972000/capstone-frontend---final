@@ -18,12 +18,7 @@ import { useEffect, useState } from 'react';
 export default function ProfilePage() {
   const [user,setUser]=useState("")
 
-  const signout = () => {
-
-    localStorage.clear();
-
-    window.location.href = "/";
-  };
+  
   
   
 
@@ -84,7 +79,7 @@ export default function ProfilePage() {
                 </MDBListGroup>
               </MDBCardBody>
             </MDBCard>
-            <button className="btn btn-danger mt-3" onClick={signout}>sign out</button>
+            
           </MDBCol>
           <MDBCol lg="8">
             <MDBCard className="mb-4">

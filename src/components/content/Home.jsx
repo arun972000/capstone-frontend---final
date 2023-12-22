@@ -6,12 +6,12 @@ import CardComponent from "./HomepageCards";
 const HomePage = () => {
   return (
     <div className="">
-      {/* Markdown Viewer */}
+     
       <div className="markdown-viewer">
-        {/* Your Markdown content goes here */}
+       
       </div>
 
-      {/* Introduction and Overview */}
+      
       <Container className="py-5">
         <Row>
           <Col>

@@ -14,6 +14,7 @@ const AllBlogs = () => {
         try {
             const res = await axios.get(`${Url}api/blog`)
             setData(res.data)
+            
         } catch (err) {
             console.log(err)
         }
@@ -24,6 +25,7 @@ const AllBlogs = () => {
         try {
             await axios.delete(`${Url}api/blog/delete/${id}`)
             blogs()
+            
         } catch (err) {
             console.log(err)
         }
@@ -36,7 +38,7 @@ const AllBlogs = () => {
     return (
         <div className=" mb-5">
             <Link to="/blog/create"><Button variant="info" className="mb-4">Write</Button></Link>
-            <div className="col-md-6 offset-md-3">
+            <div className="col-md-6 offset-md-3" style={{marginBottom:40}}>
                 <form>
                     <div className="input-group mb-3">
                         <input
@@ -48,16 +50,14 @@ const AllBlogs = () => {
                             value={searchData}
                             onChange={(e)=>setSearchData(e.target.value)}
                         />
-                        <Link to={`/search/${searchData}`}><button className="btn btn-primary" type="button" id="search-button">
-                            Search
-                        </button></Link>
+                        
                     </div>
                 </form>
             </div>
             <div className="row">
 
-                {data.map((post) => (
-                    // eslint-disable-next-line no-undef
+                {data.filter(item=>searchData.toLowerCase()=="" ? item : item.title.toLowerCase().includes(searchData)).map((post) => (
+                    
                     <HomePosts key={post.id} post={post} onDelete={() => deleteBlog(post.id)} />
                 ))}
             </div>
